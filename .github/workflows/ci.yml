@@ -16,7 +16,7 @@ on:
 jobs:
   gradle_wrapper_validation:
     steps:
-    - uses: actions/checkout@v2   # docs: https://github.com/actions/checkout
+    - uses: actions/checkout@v2.3.4   # docs: https://github.com/actions/checkout
       with:
         fetch-depth: '0'  # https://github.com/shipkit/shipkit-auto-version#fetch-depth-on-ci
     - name: Gradle wrapper validation
@@ -27,7 +27,7 @@ jobs:
     runs-on: windows-latest
     needs: gradle_wrapper_validation
     steps:
-    - uses: actions/checkout@v2   # docs: https://github.com/actions/checkout
+    - uses: actions/checkout@v2.3.4   # docs: https://github.com/actions/checkout
       with:
         fetch-depth: '0'  # https://github.com/shipkit/shipkit-auto-version#fetch-depth-on-ci
     - name: Run build
@@ -41,7 +41,7 @@ jobs:
     needs: [windows_build, gradle_wrapper_validation]
 
     steps:
-    - uses: actions/checkout@v2   # docs: https://github.com/actions/checkout
+    - uses: actions/checkout@v2.3.4   # docs: https://github.com/actions/checkout
       with:
         fetch-depth: '0'  # https://github.com/shipkit/shipkit-auto-version#fetch-depth-on-ci
     - name: Run build
